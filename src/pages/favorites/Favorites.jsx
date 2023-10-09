@@ -26,7 +26,9 @@ function Fafotites() {
   }, []);
 
   useEffect(() => {
-    getFilteredList();
+    if (carsList.length) {
+      getFilteredList();
+    }
   }, [carsList])
 
   return (

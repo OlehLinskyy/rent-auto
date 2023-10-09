@@ -8,12 +8,14 @@ import blueHart from 'image/blue-heart.svg';
 function CarItem({ data }) {
   const [showModal, setshowModal] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
+  
   useEffect(() => {
     const state = localStorage.getItem('cars');
     if (state) {
       setIsFavorite(state.indexOf(data.id) !== -1);
     }
-  }, []);
+  }, [data.id]);
+
   function handleModalShow() {
     setshowModal(true);
   }
@@ -30,10 +32,10 @@ function CarItem({ data }) {
     const state = localCars ? JSON.parse(localCars) : [];
     if (state.indexOf(data.id) !== -1) {
       state.splice(state.indexOf(data.id), 1);
-      setIsFavorite(false)
+      setIsFavorite(false);
     } else {
       state.push(data.id);
-      setIsFavorite(true)
+      setIsFavorite(true);
     }
     const serializedState = JSON.stringify(state);
     localStorage.setItem('cars', serializedState);
