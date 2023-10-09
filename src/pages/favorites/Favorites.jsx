@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import CarList from 'components/carList/CarList';
+import ModalCar from 'components/modalCar/ModalCar';
+import css from './Favorites.module.css'
 
 function Fafotites() {
-  const [visibleItems, setVisibleItems] = useState(8);
   const [filteredList, setFilteredList] = useState([]);
   const [carsList, setCarsList] = useState([]);
-
-  function handleLoadMore() {
-    setVisibleItems(i => i + 8);
-  }
+  const [car, setCar] = useState({});
 
   useEffect(() => {
     axios.get('/cars').then(response => {
@@ -26,13 +23,24 @@ function Fafotites() {
       setFilteredList(result);
     }
   }, [carsList]);
-
+ 
+  console.log(filteredList);
   return (
-    <div className="container">
-      <CarList carsList={filteredList.slice(0, visibleItems)} />
-      {visibleItems < filteredList.length && (
-        <button onClick={handleLoadMore}>Load more</button>
-      )}
+    <div className={`container ${css.flex}`}>
+      <ul className={css.cars_list}>
+        {filteredList.map((data, id) => (
+          <li key={id}>
+            <button className={`${css.button} ${car.id === data.id && css.active_button}` } onClick={() => {setCar(data);}}>
+              <span>{data.make}</span>
+              <span>{` ${data.model}`}</span>
+              <span>{`, ${data.year}`}</span>
+            </button>
+          </li>
+        ))}
+      </ul>
+      <div className={css.previev}>
+        {car.id && <ModalCar data={car}/>}
+      </div>
     </div>
   );
 }

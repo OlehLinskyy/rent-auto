@@ -1,0 +1,11 @@
+.button {
+  border: none;
+  background-color: transparent;
+  color: #3470ff;
+  font-family: Manrope;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration-line: underline;
+  margin-top: 100px;
+}

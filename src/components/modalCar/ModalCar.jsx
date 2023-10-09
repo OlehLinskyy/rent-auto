@@ -4,22 +4,22 @@ import close from 'image/x.svg';
 function ModalCar({ data, ModalClose }) {
   const address = data.address.split(',');
   const rentalConditions = data.rentalConditions.split('\n');
-  const placeholderImage = "https://i.ibb.co/SQMHv4P/car.jpg"
+  const placeholderImage = 'https://i.ibb.co/SQMHv4P/car.jpg';
   function handlecloseModal() {
     ModalClose();
   }
-  const onImageError = (e) => {
+  const onImageError = e => {
     e.target.src = placeholderImage;
-  }
+  };
 
   return (
     <>
       <div className={css.main_info}>
-        <img 
-            className={css.image} 
-            src={data.img || placeholderImage}
-            onError={onImageError} 
-            alt="cars" 
+        <img
+          className={css.image}
+          src={data.img || placeholderImage}
+          onError={onImageError}
+          alt="cars"
         />
         <div className={css.info}>
           <p className={css.name_cars}>
@@ -81,7 +81,7 @@ function ModalCar({ data, ModalClose }) {
           </li>
           <li className={css.conditions}>
             <p>
-              Mileage: <span>{data.mileage}</span>{' '}
+              Mileage: <span>{data.mileage.toLocaleString('en-US')}</span>{' '}
             </p>
           </li>
           <li className={css.conditions}>
@@ -92,9 +92,11 @@ function ModalCar({ data, ModalClose }) {
         </ul>
       </div>
       <button className={css.rental_car}>Rental car</button>
-      <button onClick={handlecloseModal} className={css.close}>
-        <img src={close} alt="close" />
-      </button>
+      {ModalClose && (
+        <button onClick={handlecloseModal} className={css.close}>
+          <img src={close} alt="close" />
+        </button>
+      )}
     </>
   );
 }

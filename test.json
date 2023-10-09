@@ -648,5 +648,31 @@
         "address": "321 Example Lane, Kharkiv, Ukraine",
         "rentalConditions": "Minimum age: 21\nValid driver's license\nSecurity deposit and insurance required",
         "mileage": 6234
+    },
+    {
+        "id": 9630,
+        "year": 2020,
+        "make": "Kia",
+        "model": "Rio",
+        "type": "Sedan, Hatchback",
+        "img": "https://res.cloudinary.com/ditdqzoio/image/upload/v1687252635/cars/kia_rio_sedan_hatchback.jpg",
+        "description": "The Kia Rio is a versatile and fuel-efficient vehicle available in both sedan and hatchback body styles, offering a comfortable cabin, modern features, and a smooth driving experience, making it an attractive choice for urban commuters.",
+        "fuelConsumption": "6.2",
+        "engineSize": "1.6L 4-cylinder",
+        "accessories": [
+            "Apple CarPlay and Android Auto integration",
+            "Smart Key with Push Button Start",
+            "Automatic climate control"
+        ],
+        "functionalities": [
+            "Sound system",
+            "Electronic Stability Control",
+            "Rearview camera"
+        ],
+        "rentalPrice": "$50",
+        "rentalCompany": "Economy Car Rentals",
+        "address": "321 Example Lane, Kharkiv, Ukraine",
+        "rentalConditions": "Minimum age: 21\nValid driver's license\nSecurity deposit and insurance required",
+        "mileage": 6234
     }
 ]

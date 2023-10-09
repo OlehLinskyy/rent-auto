@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+import css from './Filters.module.css';
 
 function Filters({ carsList, onFilter }) {
   const refCarBrend = useRef();
@@ -61,30 +61,60 @@ function Filters({ carsList, onFilter }) {
   }
 
   return (
-    <div>
-      <Typeahead
-        id="carBrandFilter"
-        ref={refCarBrend}
-        options={uniqueMakeList}
-        onChange={setMakeFilter}
-        onBlur={blurCarBrend}
-        selected={makeFilter}
-        placeholder="Enter the text"
-      />
-      <Typeahead
-        id="carPriceFilter"
-        ref={refCarPrice}
-        options={priceList}
-        onChange={setPriceFilter}
-        onBlur={blurCarPrice}
-        selected={priceFilter}
-        placeholder="To"
-      />
-      <Form.Control ref={refPriceFrom} type="number" placeholder="From" />
-      <Form.Control ref={refPriceTo} type="number" placeholder="To" />
-      <Button variant="primary" onClick={handleFilters}>
-        Search
-      </Button>
+    <div className={css.form}>
+      <div className={css.filters_name}>
+        <p className={css.label}>Car brand</p>
+        <Typeahead
+          id="carBrandFilter"
+          ref={refCarBrend}
+          options={uniqueMakeList}
+          onChange={setMakeFilter}
+          onBlur={blurCarBrend}
+          selected={makeFilter}
+          placeholder="Enter the text"
+          inputProps={{
+            className: `${css.typehead} ${css.brand_filter}`,
+          }}
+        />
+      </div>
+      <div className={css.filters_name}>
+        <p className={css.label}>Price/ 1 hour</p>
+        <Typeahead
+          id="carPriceFilter"
+          ref={refCarPrice}
+          options={priceList}
+          onChange={setPriceFilter}
+          onBlur={blurCarPrice}
+          selected={priceFilter}
+          placeholder="To"
+          inputProps={{
+            className: `${css.typehead} ${css.price_filter}`,
+          }}
+        />
+      </div>
+      <div className={css.filters_name}>
+        <p className={css.label}>Сar mileage / km</p>
+        <div className={css.inputs}>
+          <div className={css.input_flex}>
+            <Form.Control
+              className={css.input_from}
+              ref={refPriceFrom}
+              type="number"
+              placeholder="From"
+            />
+            <Form.Control
+              className={css.input_to}
+              ref={refPriceTo}
+              type="number"
+              placeholder="To"
+            />
+          </div>
+
+          <button className={css.search_button} onClick={handleFilters}>
+            Search
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

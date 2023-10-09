@@ -1,0 +1,30 @@
+.flex {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  @media screen and (min-width: 580px) {
+    flex-direction: row;
+  }
+}
+.previev {
+  margin: 0 auto;
+  @media screen and (min-width: 580px) {
+    max-width: 30vw;
+  }
+}
+.button{
+    background-color: transparent;
+    border: 1px solid #3470ff;
+    border-radius: 10px;
+    padding: 10px 16px;
+    width: 200px;
+}
+.active_button{
+    background-color: transparent;
+    color: #3470ff;
+}
+.cars_list{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
