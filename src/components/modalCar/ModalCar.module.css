@@ -24,17 +24,6 @@
 .name_cars > span {
   color: #3470ff;
 }
-.location {
-  display: flex;
-  gap: 6px;
-}
-.location > p {
-  color: rgba(18, 20, 23, 0.5);
-  font-family: Manrope;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1.5;
-}
 .conditions_item {
   display: flex;
   flex-wrap: wrap;
@@ -61,6 +50,8 @@
 }
 .rental_car {
   border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
   background: #3470ff;
   padding: 12px 50px;
   width: 188px;

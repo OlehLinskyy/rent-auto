@@ -25,7 +25,7 @@ function Header() {
               to="/favorites"
               className={css.link}
             >
-              Fafotite
+              Favorite
             </NavLink>
           </nav>
         </div>

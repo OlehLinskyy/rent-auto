@@ -109,7 +109,6 @@ function Filters({ carsList, onFilter }) {
               placeholder="To"
             />
           </div>
-
           <button className={css.search_button} onClick={handleFilters}>
             Search
           </button>

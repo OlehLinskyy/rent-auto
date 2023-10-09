@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import css from './carItem.module.css';
 import ModalCar from 'components/modalCar/ModalCar';
+import Description from 'components/description/Description';
 import heart from 'image/heart.svg';
 import blueHart from 'image/blue-heart.svg';
 
@@ -61,14 +62,16 @@ function CarItem({ data }) {
             <p>{data.rentalPrice}</p>
           </div>
           <div>
-            <div className={css.location}>
+            <Description array={[address[1], address[2], data.rentalCompany]} />
+            {/* <div className={css.location}>
               <p>{address[1]}</p>
               <p>|</p>
               <p>{address[2]}</p>
               <p>|</p>
               <p>{data.rentalCompany}</p>
-            </div>
-            <div className={css.location}>
+            </div> */}
+            <Description array={[data.type, data.model, data.id,data.functionalities[0]]} />
+            {/* <div className={css.location}>
               <p>{data.type}</p>
               <p>|</p>
               <p>{data.model}</p>
@@ -76,7 +79,7 @@ function CarItem({ data }) {
               <p>{data.id}</p>
               <p>|</p>
               <p>{data.functionalities[0]}</p>
-            </div>
+            </div> */}
           </div>
         </div>
         <button onClick={handleModalShow} className={css.learn_more}>

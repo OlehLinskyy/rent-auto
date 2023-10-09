@@ -1,4 +1,5 @@
 import css from './ModalCar.module.css';
+import Description from 'components/description/Description';
 import close from 'image/x.svg';
 
 function ModalCar({ data, ModalClose }) {
@@ -28,22 +29,21 @@ function ModalCar({ data, ModalClose }) {
             {`, ${data.year}`}
           </p>
           <div>
-            <div className={css.location}>
-              <p>{address[1]}</p>
-              <p>|</p>
-              <p>{address[2]}</p>
-              <p>|</p>
-              <p>{`Id: ${data.id}`}</p>
-              <p>|</p>
-              <p>{`Year: ${data.year}`}</p>
-              <p>|</p>
-              <p>{`Type: ${data.type}`}</p>
-            </div>
-            <div className={css.location}>
-              <p>{`Fuel Consumption: ${data.fuelConsumption}`}</p>
-              <p>|</p>
-              <p>{`Engine Size: ${data.engineSize}`}</p>
-            </div>
+            <Description
+              array={[
+                address[1],
+                address[2],
+                `Id: ${data.id}`,
+                `Year: ${data.year}`,
+                `Type: ${data.type}`,
+              ]}
+            />
+            <Description
+              array={[
+                `Fuel Consumption: ${data.fuelConsumption}`,
+                `Engine Size: ${data.engineSize}`,
+              ]}
+            />
           </div>
         </div>
         <p className={css.description}>{data.description}</p>
@@ -51,20 +51,20 @@ function ModalCar({ data, ModalClose }) {
       <div className={css.info}>
         <p className={css.title}>Accessories and functionalities:</p>
         <div>
-          <div className={css.location}>
-            <p>{data.accessories[0]}</p>
-            <p>|</p>
-            <p>{data.accessories[1]}</p>
-            <p>|</p>
-            <p>{data.accessories[2]}</p>
-          </div>
-          <div className={css.location}>
-            <p>{data.functionalities[0]}</p>
-            <p>|</p>
-            <p>{data.functionalities[1]}</p>
-            <p>|</p>
-            <p>{data.functionalities[2]}</p>
-          </div>
+          <Description
+            array={[
+              data.accessories[0],
+              data.accessories[1],
+              data.accessories[2],
+            ]}
+          />
+          <Description
+            array={[
+              data.functionalities[0],
+              data.functionalities[1],
+              data.functionalities[2],
+            ]}
+          />
         </div>
       </div>
       <div className={css.info}>
@@ -91,7 +91,9 @@ function ModalCar({ data, ModalClose }) {
           </li>
         </ul>
       </div>
-      <button className={css.rental_car}>Rental car</button>
+      <a href="tel:+380730000000" className={css.rental_car}>
+        Rental car
+      </a>
       {ModalClose && (
         <button onClick={handlecloseModal} className={css.close}>
           <img src={close} alt="close" />

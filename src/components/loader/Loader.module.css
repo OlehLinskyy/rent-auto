@@ -1,0 +1,8 @@
+.loader {
+    position: fixed;
+    top: 40vh;
+    left: calc(50vw - 40px);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }

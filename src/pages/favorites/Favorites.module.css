@@ -1,6 +1,7 @@
 .flex {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 50px;
   @media screen and (min-width: 580px) {
     flex-direction: row;

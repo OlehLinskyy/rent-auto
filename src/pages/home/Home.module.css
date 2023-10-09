@@ -1,0 +1,43 @@
+.hero {
+  height: calc(100vh - 78px);
+  background-image: url('https://i.ibb.co/x5qDW8Z/car-rental-stock.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+.card {
+  max-width: 400px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.number {
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  padding: 12px 50px;
+  width: 188px;
+  height: 44px;
+  border: 2px solid #3470ff;
+  color: #3470ff;
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.42;
+  margin-left: auto;
+}
+
+.number:hover {
+  background-color: #3470ff;
+  color: #ffffff;
+}
