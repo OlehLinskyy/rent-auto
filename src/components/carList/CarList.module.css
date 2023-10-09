@@ -1,0 +1,6 @@
+.list_cars{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 29px;
+    /* justify-content: center; */
+}
