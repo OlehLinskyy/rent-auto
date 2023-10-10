@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/rent-auto/static/css/main.f9edf793.css",
+    "main.css": "/rent-auto/static/css/main.6c2257d2.css",
     "main.js": "/rent-auto/static/js/main.076ea823.js",
     "index.html": "/rent-auto/index.html",
     "static/media/heart.svg": "/rent-auto/static/media/heart.4f90324bb1306c6788753df75e79ee15.svg",
     "static/media/blue-heart.svg": "/rent-auto/static/media/blue-heart.8e0e26556b6b779d47d02c77d50f9ea1.svg",
     "static/media/x.svg": "/rent-auto/static/media/x.deb20e5da737e93121346cb3855e8f21.svg",
-    "main.f9edf793.css.map": "/rent-auto/static/css/main.f9edf793.css.map",
+    "main.6c2257d2.css.map": "/rent-auto/static/css/main.6c2257d2.css.map",
     "main.076ea823.js.map": "/rent-auto/static/js/main.076ea823.js.map"
   },
   "entrypoints": [
-    "static/css/main.f9edf793.css",
+    "static/css/main.6c2257d2.css",
     "static/js/main.076ea823.js"
   ]
 }
