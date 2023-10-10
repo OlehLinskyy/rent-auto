@@ -9,7 +9,7 @@ import blueHart from 'image/blue-heart.svg';
 function CarItem({ data }) {
   const [showModal, setshowModal] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
-  
+
   useEffect(() => {
     const state = localStorage.getItem('cars');
     if (state) {
@@ -20,14 +20,17 @@ function CarItem({ data }) {
   function handleModalShow() {
     setshowModal(true);
   }
+
   function handleModalClose() {
     setshowModal(false);
   }
+
   const address = data.address.split(',');
   const placeholderImage = 'https://i.ibb.co/SQMHv4P/car.jpg';
   const onImageError = e => {
     e.target.src = placeholderImage;
   };
+
   function handleFavorite() {
     const localCars = localStorage.getItem('cars');
     const state = localCars ? JSON.parse(localCars) : [];
@@ -63,23 +66,9 @@ function CarItem({ data }) {
           </div>
           <div>
             <Description array={[address[1], address[2], data.rentalCompany]} />
-            {/* <div className={css.location}>
-              <p>{address[1]}</p>
-              <p>|</p>
-              <p>{address[2]}</p>
-              <p>|</p>
-              <p>{data.rentalCompany}</p>
-            </div> */}
-            <Description array={[data.type, data.model, data.id,data.functionalities[0]]} />
-            {/* <div className={css.location}>
-              <p>{data.type}</p>
-              <p>|</p>
-              <p>{data.model}</p>
-              <p>|</p>
-              <p>{data.id}</p>
-              <p>|</p>
-              <p>{data.functionalities[0]}</p>
-            </div> */}
+            <Description
+              array={[data.type, data.model, data.id, data.functionalities[0]]}
+            />
           </div>
         </div>
         <button onClick={handleModalShow} className={css.learn_more}>
@@ -98,9 +87,9 @@ function CarItem({ data }) {
         </Modal>
         <button onClick={handleFavorite} className={css.heart}>
           {!isFavorite ? (
-            <img src={heart} alt="heart" />
+            <img src={heart} alt="heart" width="18" height="18"/>
           ) : (
-            <img src={blueHart} alt="heart" />
+            <img src={blueHart} alt="heart" width="18" height="18"/>
           )}
         </button>
       </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ModalCar from 'components/modalCar/ModalCar';
 import Modal from 'react-bootstrap/Modal';
@@ -11,7 +11,7 @@ function Fafotites() {
   const [carsList, setCarsList] = useState([]);
   const [car, setCar] = useState({});
   const [showModal, setshowModal] = useState(false);
-  const [loader, setLoader] = useState(false)
+  const [loader, setLoader] = useState(false);
   const isMobile = useMediaQuery('(max-width:580px)');
 
   useEffect(() => {
@@ -41,7 +41,7 @@ function Fafotites() {
 
   return (
     <div className={`container ${css.flex}`}>
-      {loader && <Loader/>}
+      {loader && <Loader />}
       <ul className={css.cars_list}>
         {filteredList.map((data, id) => (
           <li key={id}>
@@ -77,7 +77,11 @@ function Fafotites() {
             </Modal.Body>
           </Modal>
         ) : (
-          car.id && <ModalCar data={car} />
+          car.id && (
+            <div className={css.modal}>
+              <ModalCar data={car} />
+            </div>
+          )
         )}
       </div>
     </div>

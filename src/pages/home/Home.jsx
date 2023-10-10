@@ -9,7 +9,9 @@ function Home() {
             Our team would be more than happy to help you with your reservation.
             Call us!
           </p>
-          <a href="tel:+380730000000" className={css.number}>+380730000000</a>
+          <a href="tel:+380730000000" className={css.number}>
+            +380730000000
+          </a>
         </div>
       </div>
     </div>

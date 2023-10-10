@@ -47,6 +47,9 @@
   justify-content: center;
   align-items: center;
 }
+.search_button:hover {
+  background: #0B44CD;
+}
 .filters_name {
   display: flex;
   flex-direction: column;

@@ -33,7 +33,7 @@
   line-height: 1.5;
 }
 .information {
-  padding: 14px 10px 10px;
+  padding: 14px 0 10px;
 }
 .learn_more {
   border-radius: 12px;
@@ -47,6 +47,9 @@
   font-style: normal;
   font-weight: 600;
   line-height: 1.42;
+}
+.learn_more:hover {
+  background: #0B44CD;
 }
 .modal {
   padding: 0 !important;

@@ -3,7 +3,7 @@ import css from './Header.module.css';
 
 function Header() {
   const handleActiveStyle = ({ isActive }) => {
-    return { color: isActive ? '#3470ff' : 'black', marginRight: 20 };
+    return { color: isActive ? '#3470ff' : 'black', marginRight: 20, cursor: isActive ? 'default' : 'pointer' };
   };
   return (
     <div >

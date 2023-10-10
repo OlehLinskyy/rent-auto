@@ -10,7 +10,7 @@ function Catalog() {
   const [visibleItems, setVisibleItems] = useState(8);
   const [filteredList, setFilteredList] = useState([]);
   const [carsList, setCarsList] = useState([]);
-  const [loader, setLoader] = useState(false)
+  const [loader, setLoader] = useState(false);
 
   function handleLoadMore() {
     setVisibleItems(i => i + 8);
@@ -35,7 +35,7 @@ function Catalog() {
     <div className="container text_center">
       <Filters carsList={carsList} onFilter={onFilter} />
       <CarList carsList={filteredList.slice(0, visibleItems)} />
-      {loader && <Loader/>}
+      {loader && <Loader />}
       {visibleItems < filteredList.length && (
         <button className={css.button} onClick={handleLoadMore}>
           Load more

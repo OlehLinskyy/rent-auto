@@ -9,3 +9,6 @@
   text-decoration-line: underline;
   margin-top: 100px;
 }
+.button:hover {
+  color: #0B44CD;
+}

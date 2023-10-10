@@ -24,6 +24,7 @@ function Filters({ carsList, onFilter }) {
       refCarBrend.current.clear();
     }
   }
+
   function blurCarPrice() {
     if (priceFilter.length === 0) {
       refCarPrice.current.clear();
@@ -59,7 +60,6 @@ function Filters({ carsList, onFilter }) {
       });
     onFilter(filtered);
   }
-
   return (
     <div className={css.form}>
       <div className={css.filters_name}>
@@ -101,12 +101,16 @@ function Filters({ carsList, onFilter }) {
               ref={refPriceFrom}
               type="number"
               placeholder="From"
+              min="0"
+              step="1000"
             />
             <Form.Control
               className={css.input_to}
               ref={refPriceTo}
               type="number"
               placeholder="To"
+              min="0"
+              step="1000"
             />
           </div>
           <button className={css.search_button} onClick={handleFilters}>

@@ -4,7 +4,7 @@ function CarList({ carsList }) {
   return (
     <ul className={css.list_cars}>
       {carsList.map((data, id) => (
-        <CarItem data={data} key={id}/>
+        <CarItem data={data} key={id} />
       ))}
     </ul>
   );

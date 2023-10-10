@@ -64,6 +64,9 @@
   font-weight: 600;
   line-height: 1.42;
 }
+.rental_car:hover {
+  background: #0B44CD;
+}
 .close {
   background-color: transparent;
   border: none;
